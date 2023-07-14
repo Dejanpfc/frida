@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: $fontSize;
+    font-family: $bodyFont;
+    color: $text;
+    font-weight: 300;
+    line-height: 25px;
+}
+h1, h2, h3, h4 {
+    font-family: $headingsFont;
+    color: $accents;
+    font-weight: 400;
+}
+h1 {
+    font-size: 64px;
+}
+h2 {
+    font-size: 48px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+    color: $accents;
+    &:hover {
+        color: $accentsHover;
+    }
+}
+ul {
+    list-style: none;
+}
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+.container {
+    max-width: 980px;
+    width: 100%;
+    margin: auto;
+    padding: 0 30px;
+    @media(max-width: 767px) {
+        width: 90%;
+    }
+}
+.text-center {
+    text-align: center;
+}
+.btn {
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: $text;
+}
+.btn-yellow {
+    background: $accents;
+    &:hover {
+        background: $accentsHover;
+        color: $text;
+    }
+}
+.btn-yellow-outline {
+    background: transparent;
+    color: $accents;
+    border: 2px solid $accents;
+    &:hover {
+        background: $accentsHover;
+        color: $black;
+    }
+}
+.btn-black {
+    background: $black;
+    color: $accents;
+    border-radius: 0;
+    margin-left: 20px;
+    width: 376px;
+    display: inline-block;
+}
+.py {
+    padding: 70px 0;
+}
+nav {
+    z-index: 10;
+    background: rgba($black, .8);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    .container {
+        @include flex;
+        @media(max-width: 767px) {
+            flex-direction: column;
+        }
+        ul {
+            @include flex;
+            a {
+                margin-left: 30px;
+                @media(max-width: 767px) {
+                    margin:0 20px;
+                }
+            }
+        }
+    }
+}
+
+.headers {
+    position: relative;
+    img {
+        height: 400px;
+    }
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
